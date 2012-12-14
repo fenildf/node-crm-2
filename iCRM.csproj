@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1F6970E5-5DA7-41D3-ADA5-182CC46599D4}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>iCRM</RootNamespace>
+    <AssemblyName>iCRM</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="app.js" />
+    <Content Include="db\db.js" />
+    <Content Include="public\javascripts\calendar.js" />
+    <Content Include="public\javascripts\utils.js" />
+    <Content Include="public\plugins\fullcalendar-1.5.4\changelog.txt" />
+    <Content Include="public\plugins\fullcalendar-1.5.4\demos\agenda-views.html" />
+    <Content Include="public\plugins\fullcalendar-1.5.4\demos\basic-views.html" />
+    <Content Include="public\plugins\fullcalendar-1.5.4\demos\cupertino\images\ui-bg_diagonals-thick_90_eeeeee_40x40.png" />
+    <Content Include="public\plugins\fullcalendar-1.5.4\demos\cupertino\images\ui-bg_flat_15_cd0a0a_40x100.png" />
+    <Content Include="public\plugins\fullcalendar-1.5.4\demos\cupertino\images\ui-bg_glass_100_e4f1fb_1x400.png" />
+    <Content Include="public\plugins\fullcalendar-1.5.4\demos\cupertino\images\ui-bg_glass_50_3baae3_1x400.png" />
+    <Content Include="public\plugins\fullcalendar-1.5.4\demos\cupertino\images\ui-bg_glass_80_d7ebf9_1x400.png" />
+    <Content Include="public\plugins\fullcalendar-1.5.4\demos\cupertino\images\ui-bg_highlight-hard_100_f2f5f7_1x100.png" />
+    <Content Include="public\plugins\fullcalendar-1.5.4\demos\cupertino\images\ui-bg_highlight-hard_70_000000_1x100.png" />
+    <Content Include="public\plugins\fullcalendar-1.5.4\demos\cupertino\images\ui-bg_highlight-soft_100_deedf7_1x100.png" />
+    <Content Include="public\plugins\fullcalendar-1.5.4\demos\cupertino\images\ui-bg_highlight-soft_25_ffef8f_1x100.png" />
+    <Content Include="public\plugins\fullcalendar-1.5.4\demos\cupertino\images\ui-icons_2694e8_256x240.png" />
+    <Content Include="public\plugins\fullcalendar-1.5.4\demos\cupertino\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="public\plugins\fullcalendar-1.5.4\demos\cupertino\images\ui-icons_3d80b3_256x240.png" />
+    <Content Include="public\plugins\fullcalendar-1.5.4\demos\cupertino\images\ui-icons_72a7cf_256x240.png" />
+    <Content Include="public\plugins\fullcalendar-1.5.4\demos\cupertino\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="public\plugins\fullcalendar-1.5.4\demos\cupertino\theme.css" />
+    <Content Include="public\plugins\fullcalendar-1.5.4\demos\default.html" />
+    <Content Include="public\plugins\fullcalendar-1.5.4\demos\external-dragging.html" />
+    <Content Include="public\plugins\fullcalendar-1.5.4\demos\gcal.html" />
+    <Content Include="public\plugins\fullcalendar-1.5.4\demos\json.html" />
+    <Content Include="public\plugins\fullcalendar-1.5.4\demos\selectable.html" />
+    <Content Include="public\plugins\fullcalendar-1.5.4\demos\theme.html" />
+    <Content Include="public\plugins\fullcalendar-1.5.4\fullcalendar\fullcalendar.css" />
+    <Content Include="public\plugins\fullcalendar-1.5.4\fullcalendar\fullcalendar.js" />
+    <Content Include="public\plugins\fullcalendar-1.5.4\fullcalendar\fullcalendar.min.js" />
+    <Content Include="public\plugins\fullcalendar-1.5.4\fullcalendar\fullcalendar.print.css" />
+    <Content Include="public\plugins\fullcalendar-1.5.4\fullcalendar\gcal.js" />
+    <Content Include="public\plugins\fullcalendar-1.5.4\GPL-LICENSE.txt" />
+    <Content Include="public\plugins\fullcalendar-1.5.4\MIT-LICENSE.txt" />
+    <Content Include="public\stylesheets\style.css" />
+    <Content Include="routes\auth.js" />
+    <Content Include="routes\event.js" />
+    <Content Include="routes\customer.js" />
+    <Content Include="routes\index.js" />
+    <Content Include="routes\user.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="package.json" />
+    <None Include="public\plugins\fullcalendar-1.5.4\demos\.DS_Store" />
+    <None Include="public\plugins\fullcalendar-1.5.4\demos\json-events.php" />
+    <None Include="start.bat" />
+    <None Include="views\auth\login.jade" />
+    <None Include="views\event\create.jade" />
+    <None Include="views\event\edit.jade" />
+    <None Include="views\event\index.jade" />
+    <None Include="views\event\partials\calendar.jade" />
+    <None Include="views\user\create.jade" />
+    <None Include="views\user\edit.jade" />
+    <None Include="views\user\index.jade" />
+    <None Include="views\customer\create.jade" />
+    <None Include="views\customer\edit.jade" />
+    <None Include="views\customer\index.jade" />
+    <None Include="views\customer\note.jade" />
+    <None Include="views\customer\partials\notes.jade" />
+    <None Include="views\customer\view.jade" />
+    <None Include="views\index.jade" />
+    <None Include="views\layout.jade" />
+    <None Include="views\partials\titles.jade" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="public\images\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

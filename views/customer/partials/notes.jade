@@ -1,0 +1,19 @@
+.notes
+	strong Notes:
+	if customer && customer.notes && customer.notes.length
+		table.table.table-striped
+			thead
+				tr
+					th Date
+					th Created by
+					th 
+						a.pull-right(href="note") Add note
+			tbody
+				for note, i in customer.notes
+					tr
+						td= note.dateCreated
+						td= note.createdBy.fullName
+						td= note.body
+	else
+		p No notes
+		a(href="note") Add note

@@ -1,0 +1,34 @@
+extends ../layout
+
+block body
+	.page-header 
+		h1 Customers&nbsp;
+			small Editing customer [#{customer.name}]
+	.clear
+		form(method="post")
+			fieldset
+				legend Contact details
+				input(type="hidden", name="_method", value="put")
+				.col
+					input(type="text", name="customer[name]", value=customer.name, placeholder="Name", required)
+					input(type="email", name="customer[email]", value=customer.email, placeholder="Email", required)
+					input(type="text", name="customer[addresses][0][line1]", value=customer.addresses[0].line1, placeholder="Address line 1", required)
+					input(type="text", name="customer[addresses][0][line2]", value=customer.addresses[0].line2, placeholder="Address line 2")
+					input(type="text", name="customer[addresses][0][line3]", value=customer.addresses[0].line3, placeholder="Address line 3")
+					input(type="text", name="customer[addresses][0][town]", value=customer.addresses[0].town, placeholder="Town", required)
+					input(type="text", name="customer[addresses][0][county]", value=customer.addresses[0].county, placeholder="County", required)
+					input(type="text", name="customer[addresses][0][postcode]", value=customer.addresses[0].postcode, placeholder="Postcode", required)
+				.col
+					input(type="tel", name="customer[telephoneNumber]", value=customer.telephoneNumber, placeholder="Telephone Number", required)
+					select(name="customer[contacts][0][title]", required)
+						option(value="Mr", selected=customer.contacts[0].title == "Mr") Mr
+						option(value="Mrs", selected=customer.contacts[0].title == "Mrs") Mrs
+						option(value="Miss", selected=customer.contacts[0].title == "Miss") Miss
+						option(value="Ms", selected=customer.contacts[0].title == "Ms") Ms
+						option(value="Dr", selected=customer.contacts[0].title == "Dr") Dr
+					input(type="text", name="customer[contacts][0][firstName]", value=customer.contacts[0].firstName, placeholder="First name", required)
+					input(type="text", name="customer[contacts][0][lastName]", value=customer.contacts[0].lastName, placeholder="Last name", required)
+					input(type="email", name="customer[contacts][0][email]", value=customer.contacts[0].email, placeholder="Email", required)
+					.control-group
+						input.btn.btn-primary.pull-right(type="submit", value="Save")
+		include /partials/notes

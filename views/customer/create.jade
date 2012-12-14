@@ -1,0 +1,32 @@
+extends ../layout
+
+block body
+	.page-header 
+		h1 Customers&nbsp;
+			small Create new
+	form(method="post")
+		fieldset
+			legend Contact details
+			.col
+				input(type="text", name="customer[name]", placeholder="Name", required)
+				input(type="text", name="customer[email]", placeholder="Email", required)
+				input(type="text", name="customer[addresses][0][line1]", placeholder="Address line 1", required)
+				input(type="text", name="customer[addresses][0][line2]", placeholder="Address line 2")
+				input(type="text", name="customer[addresses][0][line3]", placeholder="Address line 3")
+				input(type="text", name="customer[addresses][0][town]", placeholder="Town", required)
+				input(type="text", name="customer[addresses][0][county]", placeholder="County", required)
+				input(type="text", name="customer[addresses][0][postcode]", placeholder="Postcode", required)
+			.col
+				input(type="text", name="customer[telephoneNumber]", placeholder="Telephone Number", required)
+				select(name="customer[contacts][0][title]", required)
+					option
+					option(value="Mr") Mr
+					option(value="Mrs") Mrs
+					option(value="Miss") Miss
+					option(value="Ms") Ms
+					option(value="Dr") Dr
+				input(type="text", name="customer[contacts][0][firstName]", placeholder="First name", required)
+				input(type="text", name="customer[contacts][0][lastName]", placeholder="Last name", required)
+				input(type="text", name="customer[contacts][0][email]", placeholder="Email", required)
+				.control-group
+					input.btn.btn-primary.pull-right(type="submit", value="Save")

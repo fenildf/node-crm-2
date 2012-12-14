@@ -1,0 +1,11 @@
+body { padding-top: 50px; }
+.app-details { text-align: right; }
+
+.col { float: left; margin-left: 10px; }
+.col input[type=text], .col input[type=tel], .col input[type=email], .col input[type=number], .col input[type=date], .col input[type=password] { display: block; }
+.clear { clear: both; }
+
+#eventModal { width: auto; }
+#eventModal textarea { width: 95%; }
+
+/*.fc-event.appointment.fc-event-skin, .fc-event.appointment .fc-event-skin { background-color: aliceblue; border-color: aliceblue; color: #808080; }*/

@@ -1,0 +1,55 @@
+doctype 5
+html
+	head
+		title= locals.metaTitle
+		link(rel="stylesheet", href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap-combined.min.css")
+		link(rel="stylesheet", href="/stylesheets/style.css")
+		script(src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js")
+		script(src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/js/bootstrap.min.js")
+		script(src="/javascripts/utils.js")
+		block head
+	body
+		.navbar.navbar-inverse.navbar-fixed-top
+			.navbar-inner
+				.container
+					a.btn.btn-navbar(data-toggle="collapse", data-target=".nav-collapse")
+						span.icon-bar
+						span.icon-bar
+						span.icon-bar
+					a.brand(href="/") #{applicationTitle}
+					.nav-collapse.collapse
+						p.navbar-text.pull-right
+							if isAuthenticated
+								a.navbar-link(href="/logout") Logout
+							else
+								a.navbar-link(href="/login") Login
+						ul.nav
+							li
+								a(href="/") Home
+							li.dropdown
+								a.dropdown-toggle(href="#", data-toggle="dropdown") Customers
+									b.caret
+								ul.dropdown-menu(role="menu")
+									li 
+										a(href="/customers") Search
+									li 
+										a(href="/customer") Create
+							li.dropdown
+								a.dropdown-toggle(href="#", data-toggle="dropdown") Users
+									b.caret
+								ul.dropdown-menu(role="menu")
+									li 
+										a(href="/users") Search
+									li 
+										a(href="/user") Create
+		.container
+			#alert
+				if locals.alert
+					.alert(class="alert-" + locals.alert.type)
+						button.close(data-dismiss="alert", type="button") &times;
+						strong= locals.alert.title
+						| &nbsp;#{locals.alert.message}
+			.app-details.pull-right
+				h1= locals.applicationTitle
+				p= locals.applicationDescription
+			block body

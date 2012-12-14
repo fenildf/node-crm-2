@@ -1,0 +1,40 @@
+extends ../layout
+
+block head
+		link(rel="stylesheet", href="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/themes/base/jquery-ui.css")
+		link(rel="stylesheet", href="/plugins/fullcalendar-1.5.4/fullcalendar/fullcalendar.css")
+		script(src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js")
+		script(src="/plugins/fullcalendar-1.5.4/fullcalendar/fullcalendar.min.js")
+		script(src="/javascripts/calendar.js")
+
+block body
+	.page-header 
+		h1 Event&nbsp;
+			small= locals.user.fullName
+		#creator.modal.hide.fade
+			.modal-header
+				button.close(type="button", data-dismiss="modal") &times;
+				h3 Event details
+			.modal-body
+				#event
+					form(method="post")
+						fieldset
+							label Type
+							select(name="event[type]", required)
+								option
+								option(value="appointment") Appointment
+								option(value="holiday") Holiday
+								option(value="meeting") Meeting
+								option(value="note") Note
+							.customers
+								label Customer
+								input(type="text", id="customers", required)
+							label Start
+							input(type="text", id="start", readonly)
+							label End
+							input(type="text", id="end", readonly)
+							input(type="submit", value="Save", style="display: none;")
+			.modal-footer
+				a.btn(data-dismiss="modal") Close
+				a.btn.btn-primary Save changes
+	#calendar

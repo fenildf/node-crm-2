@@ -1,0 +1,31 @@
+extends ../layout
+
+block body
+	.page-header 
+		h1 Users&nbsp;
+			small Editing user [#{user.name}]
+	.clear
+		form(method="post")
+			fieldset
+				legend Contact details
+				input(type="hidden", name="_method", value="put")
+				.col
+					input(type="text", name="user[name]", value=user.name, placeholder="Login name", required)
+					input(type="text", name="user[email]", value=user.email, placeholder="Email", required)
+					input(type="password", name="user[password]", value=user.password, placeholder="Password", required)
+					input(type="text", name="user[telephoneNumber]", value=user.telephoneNumber, placeholder="Telephone number", required)
+				.col
+					select(name="user[title]", required)
+						option(value="Mr", selected = user.title == "Mr") Mr
+						option(value="Mrs", selected = user.title == "Mrs") Mrs
+						option(value="Miss", selected = user.title == "Miss") Miss
+						option(value="Ms", selected = user.title == "Ms") Ms
+						option(value="Dr", selected = user.title == "Dr") Dr
+					input(type="text", name="user[firstName]", value=user.firstName, placeholder="First name")
+					input(type="text", name="user[lastName]", value=user.lastName, placeholder="Last name", required)
+					input.btn.btn-primary.pull-right(type="submit", value="Save")
+					label.checkbox
+						input(type="hidden", name="user[active]", value="0")
+						input(type="checkbox", name="user[active]", checked=user.active)
+						| Active
+					.control-group

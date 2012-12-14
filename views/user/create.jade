@@ -1,0 +1,29 @@
+extends ../layout
+
+block body
+	.page-header 
+		h1 Users&nbsp;
+			small Create new
+	form(method="post")
+		fieldset
+			legend Contact details
+			.col
+				input(type="text", name="user[name]", placeholder="Login name", required)
+				input(type="text", name="user[email]", placeholder="Email", required)
+				input(type="password", name="user[password]", placeholder="Password", required)
+				input(type="text", name="user[telephoneNumber]", placeholder="Telephone number", required)
+			.col
+				select(name="user[title]", required)
+					option
+					option(value="Mr") Mr
+					option(value="Mrs") Mrs
+					option(value="Miss") Miss
+					option(value="Ms") Ms
+					option(value="Dr") Dr
+				input(type="text", name="user[firstName]", placeholder="First name")
+				input(type="text", name="user[lastName]", placeholder="Last name", required)
+				input.btn.btn-primary.pull-right(type="submit", value="Save")
+				label.checkbox
+					input(type="hidden", name="user[active]", value="0")
+					input(type="checkbox", name="user[active]")
+					| Active

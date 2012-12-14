@@ -1,0 +1,14 @@
+extends ../layout
+
+block body
+	.page-header 
+		h1 Customers&nbsp;
+			small Create new customer note
+	.clear
+		form(method="post")
+			fieldset
+				legend Note
+				.col
+					textarea(name="body", required)
+					.control-group
+						input.btn.btn-primary(type="submit", value="Save")

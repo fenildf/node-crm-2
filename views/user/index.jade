@@ -1,0 +1,44 @@
+extends ../layout
+
+block body
+	.page-header 
+		h1 Users&nbsp;
+			small Search
+	.clear
+		.navbar
+			.navbar-inner
+				form.navbar-search.form-search.pull-left(method="get")
+					.input-append
+						input.search-query(type="text", placeholder="Search name or email", name="q", value=locals.query)
+						button.btn(type="submit") Search
+				a.btn.btn-default.pull-right(href="/user") Create new user
+		if users && users.length
+			table.table.table-striped
+				thead
+					tr
+						th Name
+						th Email
+						th Password
+						th Telephone Number
+						th Title
+						th First name
+						th Last name
+						th Active
+						th Keywords
+						th
+				tbody
+					for user, i in users
+						tr
+							td= user.name
+							td= user.email
+							td= user.password
+							td= user.telephoneNumber
+							td= user.title
+							td= user.firstName
+							td= user.lastName
+							td= user.active
+							td= user.keywords
+							td
+								a.edit(href="/user/#{user._id}/edit") edit
+								&nbsp;
+								a.edit(href="/user/#{user._id}/events") events
